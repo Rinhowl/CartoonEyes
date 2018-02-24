@@ -6,11 +6,12 @@
 
 float scale = 70;
 int bg = #94DAF0;
+int flag;
 
 Eye left,right;
 
 void setup(){
-  size(500,500);
+  size(500,500,P3D);
   noStroke();
   rectMode(CENTER);
   translate(width/2,height/2);
@@ -34,7 +35,20 @@ void draw(){
   ellipse(width/2-scale,height/2,102,102);
   ellipse(width/2+scale,height/2,102,102);
   
+  if(flag==1){
+    left.sizeY -= 2;
+    right.sizeY -= 2;
+   
+  }
+  
   left.showEye();
   right.showEye();
   
+  
+  
+}
+
+void mouseClicked(){
+  left.blink();
+  right.blink();
 }
