@@ -14,25 +14,23 @@ class Eye{
     fill(30);
     if(sizeY <= -60){
      sizeY = 60;
-     flag=0; 
+     blink=""; 
     }
+    follow();
     ellipse(x,y,sizeX,sizeY);
   }
   
   void follow(){
-    if(mouseX<0){
-      x -= speed;
-     if(mouseY>0){
-       y -= speed;
-     }
-     if(mouseY<0){
-       y += speed;
-     }
-    }
+   angle = atan2(mouseY-height/2,mouseX-width/2);
+   offX = cos(angle)*dist(mouseX,mouseY,0,0);
+   offY = sin(angle)*dist(mouseX,mouseY,0,0);
+   x += offX/200;
+   y += offY/200;
+   
   }
   
   void blink(){
-    flag =1;
+    blink ="b";
   }
   
 }
