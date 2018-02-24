@@ -4,10 +4,10 @@
 // AUTHOR|Rinhowl|
 /*****************************/
 
+
 float scale = 70;
 int bg = #94DAF0;
 String blink;
-int pos;
 float angle,offX,offY;
 
 Eye left,right;
@@ -33,22 +33,13 @@ void draw(){
   fill(bg);
   ellipse(width/2-scale,height/2,110,110);
   ellipse(width/2+scale,height/2,110,110);
-  fill(240);
-  ellipse(width/2-scale,height/2,102,102);
-  ellipse(width/2+scale,height/2,102,102);
+  
   
   //blink effect
   if("b".equals(blink)){
     left.sizeY -= 2;
     right.sizeY -= 2;
   }
-  
-  //follow effect
-  
-  
-  
-   
-  
   
   left.showEye();
   right.showEye();
