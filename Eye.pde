@@ -26,11 +26,11 @@ class Eye{
   
   void follow(){
    angle = atan2(mouseY-height/2,mouseX-width/2);
-   dist = dist(mouseX,mouseY,0,0)/15;
+   dist = dist(mouseX,mouseY,width/2,height/2)/10;
    
-   if(dist > 40){
-     this.bx = this.x + cos(angle)*40;
-     this.by = this.y + sin(angle)*40;
+   if(dist > 20){
+     this.bx = this.x + cos(angle)*20;
+     this.by = this.y + sin(angle)*20;
    }else{
      this.bx = this.x + cos(angle)*dist;
      this.by = this.y + sin(angle)*dist;
